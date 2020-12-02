@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
 class BirthdayListAdapter :
-    ListAdapter<Birthday, BirthdayViewHolder>(BirthdayListDiffCallback) {
+    ListAdapter<BirthdayViewModel, BirthdayViewHolder>(BirthdayListDiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BirthdayViewHolder {
         val view = LayoutInflater
@@ -26,23 +26,21 @@ class BirthdayListAdapter :
 
 }
 
-data class Birthday(val text: String)
-
 class BirthdayViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     private val birthdayText: TextView = itemView.findViewById(R.id.birthday_text)
 
-    fun bind(birthday: Birthday) {
-        birthdayText.text = birthday.text
+    fun bind(birthdayViewModel: BirthdayViewModel) {
+        birthdayText.text = birthdayViewModel.text
     }
 }
 
-object BirthdayListDiffCallback : DiffUtil.ItemCallback<Birthday>() {
-    override fun areItemsTheSame(oldItem: Birthday, newItem: Birthday): Boolean {
+object BirthdayListDiffCallback : DiffUtil.ItemCallback<BirthdayViewModel>() {
+    override fun areItemsTheSame(oldItem: BirthdayViewModel, newItem: BirthdayViewModel): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: Birthday, newItem: Birthday): Boolean {
+    override fun areContentsTheSame(oldItem: BirthdayViewModel, newItem: BirthdayViewModel): Boolean {
         return oldItem.text == newItem.text
     }
 }

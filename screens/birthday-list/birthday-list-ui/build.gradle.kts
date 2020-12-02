@@ -24,9 +24,12 @@ android {
 }
 
 dependencies {
+    implementation(project(":screens:birthday-list:birthday-list-business-logic"))
+
     implementation(Dependencies.Kotlin.standardLibrary)
     implementation(Dependencies.AndroidX.coreExtensions)
     implementation(Dependencies.AndroidX.appCompat)
+    implementation(Dependencies.AndroidX.viewModel)
 
     implementation(Dependencies.Material.materialDesign)
     implementation("androidx.appcompat:appcompat:1.2.0")

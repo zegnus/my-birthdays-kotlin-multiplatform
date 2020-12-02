@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/screens" />
             <option value="$PROJECT_DIR$/screens/birthday-list" />
+            <option value="$PROJECT_DIR$/screens/birthday-list/birthday-list-business-logic" />
             <option value="$PROJECT_DIR$/screens/birthday-list/birthday-list-ui" />
           </set>
         </option>

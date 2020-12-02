@@ -26,6 +26,7 @@ object Dependencies {
     object AndroidX {
         const val coreExtensions = "androidx.core:core-ktx:1.3.2"
         const val appCompat = "androidx.appcompat:appcompat:1.2.0"
+        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     }
 
     object Material {
