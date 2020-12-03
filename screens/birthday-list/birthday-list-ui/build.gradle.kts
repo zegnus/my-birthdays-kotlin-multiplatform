@@ -18,6 +18,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = Versions.java
     }
@@ -33,11 +34,9 @@ dependencies {
 
     implementation(Dependencies.Material.materialDesign)
     implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
 
-    testImplementation(Dependencies.Testing.UnitTesting.jUnit)
+    testImplementation(Dependencies.Testing.junit)
 
-    androidTestImplementation(Dependencies.Testing.AndroidInstrumentation.jUnitExtensions)
-    androidTestImplementation(Dependencies.Testing.AndroidInstrumentation.expressoCore)
+    androidTestImplementation(Dependencies.Testing.AndroidXTest.junit)
 }

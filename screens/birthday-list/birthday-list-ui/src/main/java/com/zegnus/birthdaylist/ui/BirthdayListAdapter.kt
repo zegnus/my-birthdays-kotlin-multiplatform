@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.zegnus.birthdaylist.businesslogic.presentation.BirthdayViewModel
 
 class BirthdayListAdapter :
     ListAdapter<BirthdayViewModel, BirthdayViewHolder>(BirthdayListDiffCallback) {
@@ -23,7 +24,6 @@ class BirthdayListAdapter :
         val birthday = getItem(position)
         holder.bind(birthday)
     }
-
 }
 
 class BirthdayViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

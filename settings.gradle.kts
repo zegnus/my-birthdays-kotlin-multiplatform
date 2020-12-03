@@ -4,5 +4,5 @@ include(
     ":screens:birthday-list:birthday-list-business-logic"
 )
 
-rootProject.name = "My Birthdays"
+rootProject.name = "MyBirthdays"
 enableFeaturePreview("GRADLE_METADATA")
