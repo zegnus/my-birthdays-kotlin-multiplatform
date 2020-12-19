@@ -14,14 +14,21 @@ internal fun Birthday.toViewModel(time: Time): BirthdayViewModel {
 
     val text = when (whenIsTheBirthdayType) {
         WhenIsTheBirthdayType.Today -> "$name's birthday is today, ${personReference()} is $yearsOld years old"
-        WhenIsTheBirthdayType.Tomorrow -> "TODO()"
-        WhenIsTheBirthdayType.NextDay -> "TODO()"
-        WhenIsTheBirthdayType.ThisMonth -> "TODO()"
-        WhenIsTheBirthdayType.NextMonth -> "TODO()"
-        WhenIsTheBirthdayType.MoreThanAMonth -> "TODO()"
+        WhenIsTheBirthdayType.Tomorrow -> "$name's birthday is tomorrow, ${personReference()} will be $yearsOld years old"
+        WhenIsTheBirthdayType.NextDay -> "$name's birthday is next ${date.dayOfWeek} on the ${date.dayOfMonth}${date.dayOfMonth.toOrdinal()} of ${date.month}, ${personReference()} will be $yearsOld years old"
+        WhenIsTheBirthdayType.ThisMonth -> "$name's birthday is this month on the ${date.dayOfMonth}${date.dayOfMonth.toOrdinal()} of ${date.month}, ${personReference()} will be $yearsOld years old"
+        WhenIsTheBirthdayType.NextMonth -> "$name's birthday is next month on the ${date.dayOfMonth}${date.dayOfMonth.toOrdinal()} of ${date.month}, ${personReference()} will be $yearsOld years old"
+        WhenIsTheBirthdayType.MoreThanAMonth -> "$name's birthday is in ${monthsLeft(date, time.now())} months on the ${date.dayOfMonth}${date.dayOfMonth.toOrdinal()} of ${date.month}, ${personReference()} will be $yearsOld years old"
     }
     return BirthdayViewModel(text)
 }
+
+private fun monthsLeft(birthdayDate: DateTime, today: DateTime): Int =
+    if (birthdayDate.month > today.month) {
+        birthdayDate.month - today.month
+    } else {
+        12 - today.month1 + birthdayDate.month0
+    }
 
 private fun whenIsTheBirthdayType(birthday: DateTime, now: DateTime): WhenIsTheBirthdayType {
     val timeDifference = timeDifference(now, birthday)
@@ -43,12 +50,12 @@ private fun Birthday.personReference(): String =
     }
 
 private enum class WhenIsTheBirthdayType {
-    Today, // Anna's birthday is today, she will is 34 years old
-    Tomorrow, // Anna's birthday is tomorrow, she will be 34 years old
-    NextDay, // Anna's birthday is next Tuesday on the 24th of January, she will is 34 years old
-    ThisMonth, // Anna's birthday is this month on the 24th of January, she will is 34 years old
-    NextMonth, // Anna's birthday is next month on the 24th of January, she will is 34 years old
-    MoreThanAMonth, // Anna's birthday is in 2 months on the 24th of Jaunary, she will is 34 years old
+    Today,
+    Tomorrow,
+    NextDay,
+    ThisMonth,
+    NextMonth,
+    MoreThanAMonth,
 }
 
 private fun Int.toOrdinal(): String {
@@ -76,9 +83,3 @@ private fun timeDifference(now: DateTime, birthday: DateTime): TimeSpan {
         diff
     }
 }
-
-//            BirthdayViewModel("Anna's birthday is today, she will is 34 years old"),
-//            //BirthdayViewModel("Anna's birthday is in 4 months, on the 13th of July she will be 34 years old"),
-//            //BirthdayViewModel("Eric's birthday is in 10 months, on the 7th of January Eric will be 30 years old"),
-//            //BirthdayViewModel("Ferran's birthday is in 2 months, on the 14th of May he will be 39 years old"),
-//            //BirthdayViewModel("Marc's birthday is today, he is 20 years old")
