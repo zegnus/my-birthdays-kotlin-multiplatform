@@ -2,7 +2,6 @@ package com.zegnus.birthdaylist.businesslogic.presentation
 
 import com.soywiz.klock.DateTime
 import com.soywiz.klock.TimeSpan
-import com.soywiz.klock.Year
 import com.zegnus.birthdaylist.businesslogic.domain.Birthday
 import com.zegnus.birthdaylist.businesslogic.domain.Sex
 import com.zegnus.birthdaylist.businesslogic.presentation.WhenIsTheBirthdayType.*

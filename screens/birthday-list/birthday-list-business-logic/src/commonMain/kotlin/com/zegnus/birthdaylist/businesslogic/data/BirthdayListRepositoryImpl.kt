@@ -11,7 +11,8 @@ class BirthdayListRepositoryImpl: BirthdayListRepository {
     override fun birthdayList(): List<Birthday> {
         return listOf(
             Birthday("Anna", DateTime(1987, Month.July, 13), Sex.Female),
-            Birthday("Ferran", DateTime(1982, Month.May, 14), Sex.Male)
+            Birthday("Ferran", DateTime(1982, Month.May, 14), Sex.Male),
+            Birthday("Adrian", DateTime(2020, Month.August, 29), Sex.Male)
         )
     }
 }
