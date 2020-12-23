@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/screens" />
+            <option value="$PROJECT_DIR$/screens/add-new-birthday" />
+            <option value="$PROJECT_DIR$/screens/add-new-birthday/add-new-birthday-ui" />
             <option value="$PROJECT_DIR$/screens/birthday-list" />
             <option value="$PROJECT_DIR$/screens/birthday-list/birthday-list-business-logic" />
             <option value="$PROJECT_DIR$/screens/birthday-list/birthday-list-ui" />

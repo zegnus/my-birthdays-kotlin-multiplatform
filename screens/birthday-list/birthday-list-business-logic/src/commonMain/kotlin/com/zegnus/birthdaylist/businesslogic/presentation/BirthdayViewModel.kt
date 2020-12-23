@@ -88,5 +88,5 @@ private fun Birthday.monthsLeft(today: DateTime): Int =
     if (date.month > today.month) {
         date.month - today.month
     } else {
-        12 - today.month1 + date.month0
+        12 - today.month1 + date.month1
     }

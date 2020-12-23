@@ -39,7 +39,7 @@ class BirthdayListPresenterTest {
             BirthdayViewModel("Marc's birthday is this month on the 9th of March, he will be 39 years old"),
             BirthdayViewModel("Marta's birthday is next month on the 1st of April, Marta will be 39 years old"),
             BirthdayViewModel("David's birthday is in 2 months on the 1st of May, he will be 39 years old"),
-            BirthdayViewModel("Jordi's birthday is in 10 months on the 1st of February, he will be 39 years old")
+            BirthdayViewModel("Jordi's birthday is in 11 months on the 1st of February, he will be 39 years old")
         )
 
         assertEquals(expectedBirthdayList, birthdayList)
